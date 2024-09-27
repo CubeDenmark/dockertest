@@ -22,3 +22,18 @@ CMD ["flask", "run", "--host", "0.0.0.0", "--port", "8000"]
 
 
 #  docker build https://github.com/user/myrepo.git
+
+
+# URL fragments
+# You can append URL fragments to the Git repository address to make the builder clone a specific branch, tag, and subdirectory of a repository.
+
+# The format of the URL fragment is #ref:dir, where:
+
+# ref is the name of the branch, tag, or commit hash
+# dir is a subdirectory inside the repository
+# For example, the following command uses the container branch, and the docker subdirectory in that branch, as the build context:
+
+
+#  docker build https://github.com/user/myrepo.git#container:docker
+
+# docker build -t test_github:v1.0 https://github.com/CubeDenmark/dockertest.git
