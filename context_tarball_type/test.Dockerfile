@@ -13,17 +13,12 @@ ENV FLASK_APP=hello
 EXPOSE 8000
 CMD ["flask", "run", "--host", "0.0.0.0", "--port", "8000"]
 
-# You can create a tarball of the directory and pipe it to the build for use as a context:
+# Git repositories
+# When you pass a URL pointing to the location of a Git repository as an argument to docker build, the builder uses the repository as the build context.
+
+# The builder performs a shallow clone of the repository, downloading only the HEAD commit, not the entire history.
+
+# The builder recursively clones the repository and any submodules it contains.
 
 
-#     tar czf foo.tar.gz *
-#     docker build - < foo.tar.gz
-
-
-# The build resolves the Dockerfile from the tarball context. 
-# You can use the --file flag to specify the name and location of 
-# the Dockerfile relative to the root of the tarball. The following 
-# command builds using test.Dockerfile in the tarball:
-
-
-#     docker build --file test.Dockerfile - < foo.tar.gz
+#  docker build https://github.com/user/myrepo.git
