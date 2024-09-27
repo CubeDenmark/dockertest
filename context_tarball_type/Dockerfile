@@ -22,3 +22,12 @@ CMD ["flask", "run", "--host", "0.0.0.0", "--port", "8000"]
 
 
 #  docker build https://github.com/user/myrepo.git
+
+#  docker build https://github.com/user/myrepo.git#container:docker
+
+# docker build -t test_github:v1.0 https://github.com/CubeDenmark/dockertest.git
+
+# /  The following works:
+# docker build github.com/docker/buildx#d4f088e689b41353d74f1a0bfcd6d7c0b213aed2
+# X The following doesn't work because the commit hash is truncated:
+# docker build github.com/docker/buildx#d4f088e
